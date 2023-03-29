@@ -1,5 +1,6 @@
 
 
+import 'package:flutter/cupertino.dart';
 import 'package:untitled2/models/news_model.dart';
 
 class NewsArticleViewModel{
@@ -19,8 +20,14 @@ class NewsArticleViewModel{
     return _newsModel!.url;
   }
 
-  String get imageUrl{
-    return _newsModel!.imageUrl;
+  String? get urlToImage{
+    debugPrint("url error message ${_newsModel?.urlToImage}");
+    try{
+      return _newsModel?.urlToImage;
+    }
+    catch(error){
+      throw Exception("image url is null");
+    }
   }
 
 }

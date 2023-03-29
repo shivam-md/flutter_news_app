@@ -5,7 +5,8 @@ import 'package:untitled2/models/news_model.dart';
 
 class NewsServices{
 
-  Future<List<NewsModel>> getTopHeadlines()async{
+
+  Future<List<NewsModel>> getTopHeadlines() async{
 
     // api key
     final url = Uri.parse('https://newsapi.org/v2/top-headlines?country=us&apiKey=2da379ae37a94ff39e04f82b64975d07');
@@ -31,4 +32,8 @@ class NewsServices{
       throw Exception("Failed to get top news");
     }
   }
+
+  // NewsServices(){
+  //   getTopHeadlines();
+  // }
 }

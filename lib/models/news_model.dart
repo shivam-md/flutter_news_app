@@ -2,16 +2,16 @@
 
 class NewsModel{
   final url;
-  final imageUrl;
+  final urlToImage;
   final title;
   final description;
 
-  NewsModel({this.url,this.imageUrl,this.title,this.description});
+  NewsModel({this.url,this.urlToImage,this.title,this.description});
 
   factory NewsModel.fromJSON(Map<String,dynamic> json){
     return NewsModel(
         url: json["url"],
-        imageUrl: json["imageUrl"],
+        urlToImage: json["urlToImage"],
         title: json["title"],
         description: json["description"],
     );
