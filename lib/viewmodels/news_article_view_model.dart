@@ -26,7 +26,8 @@ class NewsArticleViewModel{
       return _newsModel?.urlToImage;
     }
     catch(error){
-      throw Exception("image url is null");
+      //throw Exception("image url is null");
+      debugPrint("url image error: $error");
     }
   }
 

@@ -7,7 +7,17 @@ import 'package:untitled2/viewmodels/news_article_view_model.dart';
 
 class NewsArticleListViewModel extends ChangeNotifier{
   
-  List<NewsArticleViewModel>? newsArticleViewModel;
+  List<NewsArticleViewModel>? _topHeadlineList;
+
+  List<NewsArticleViewModel>? _searchResultList;
+
+  get searchResultList {
+    return _searchResultList;
+  }
+
+  get topHeadlineList {
+    return _topHeadlineList;
+  }
 
 
   NewsArticleListViewModel(){
@@ -20,7 +30,7 @@ class NewsArticleListViewModel extends ChangeNotifier{
     List<NewsModel> newsModel = await NewsServices().getTopHeadlines();
 
     // takes list of news by calling newsModel inside news article view model.
-    newsArticleViewModel = newsModel.map((article) => NewsArticleViewModel(newsModel: article)).toList();
+    _topHeadlineList = newsModel.map((article) => NewsArticleViewModel(newsModel: article)).toList();
     notifyListeners();
   }
 }
